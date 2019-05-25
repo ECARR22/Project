@@ -32,7 +32,7 @@ ui_locale = 'en_GB.utf8' # e.g. 'fr_FR' fro French, '' as default
 time_format = 24 # 12 or 24
 date_format = "%b %d" # check python doc for strftime() for options
 news_country_code = 'uk'
-weather_api_token = '52cb312030821b9d32409a1452c4fbec' # create account at https://darksky.net/dev/
+weather_api_token = 'insert your own here' # create account at https://darksky.net/dev/
 weather_lang = 'en' # see https://darksky.net/dev/docs/forecast for full list of language parameters values
 weather_unit = 'si' # see https://darksky.net/dev/docs/forecast for full list of unit parameters values
 latitude = '53.01' # Set this if IP location lookup does not work for you (must be a string)
@@ -120,7 +120,7 @@ class Weather(Frame):
         try:
                 
             # get weather  ------------------------------------------------
-            weather_req_url = "https://api.darksky.net/forecast/52cb312030821b9d32409a1452c4fbec/53.2521,-8.9978?lang=en&units=si"
+            weather_req_url = "https://api.darksky.net/forecast/"insertweatherapihere"/53.2521,-8.9978?lang=en&units=si"
             r = requests.get(weather_req_url)
             weather_obj = json.loads(r.text)
             
