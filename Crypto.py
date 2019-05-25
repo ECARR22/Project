@@ -71,23 +71,14 @@ class Crypto(Frame):
         self.coin2 = ''
         self.coin3 = ''
         
-        self.cryptoLbl = Label(self.coin1, bg="black")
-        self.cryptoLbl.place(x=1015, y=300, anchor=NE)
-        
-        self.cryptoLbl2 = Label(self.coin2, bg="black")
-        self.cryptoLbl2.place(x=1015, y=330, anchor=NE)
-        
-        self.cryptoLbl3 = Label(self.coin3, bg="black")
-        self.cryptoLbl3.place(x=1015, y=360, anchor=NE)
-        
         self.coin1Lbl = Label(self.coin1, font=('Abel', extra_small_text_size), fg="white", bg="black")
-        self.coin1Lbl.place(x=985, y=300, width=100, anchor=NE)
+        self.coin1Lbl.place(x=1015, y=300, width=100, anchor=NE)
         
         self.coin2Lbl = Label(self.coin2, font=('Abel', extra_small_text_size), fg="white", bg="black")
-        self.coin2Lbl.place(x=985, y=330, width=100, anchor=NE)
+        self.coin2Lbl.place(x=1015, y=325, width=100, anchor=NE)
         
         self.coin3Lbl = Label(self.coin3, font=('Abel', extra_small_text_size), fg="white", bg="black")
-        self.coin3Lbl.place(x=985, y=360, width=100, anchor=NE)
+        self.coin3Lbl.place(x=1015, y=350, width=100, anchor=NE)
         
         url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
         parameters = {
@@ -134,89 +125,15 @@ class Crypto(Frame):
                     self.coin3 = coin33
                     self.coin3Lbl.config(text=coin33)
                     
-            if coin11 == 'Bitcoin':
-                image = Image.open("assets/BTC.png")
-                image = image.resize((25, 25), Image.ANTIALIAS)
-                image = image.convert('RGBA')
-                photo = ImageTk.PhotoImage(image)
-
-                self.cryptoLbl.config(image=photo)
-                self.cryptoLbl.image = photo
-                
-            if coin11 == 'Ethereum':
-                image = Image.open("assets/ETH.png")
-                image = image.resize((25, 25), Image.ANTIALIAS)
-                image = image.convert('RGBA')
-                photo = ImageTk.PhotoImage(image)
-                
-                self.cryptoLbl.config(image=photo)
-                self.cryptoLbl.image = photo
-                
-            if coin11 == 'XRP':
-                image = Image.open("assets/XRP.png")
-                image = image.resize((25, 25), Image.ANTIALIAS)
-                image = image.convert('RGBA')
-                photo = ImageTk.PhotoImage(image)
-                
-                self.cryptoLbl.config(image=photo)
-                self.cryptoLbl.image = photo
-                
-             
-            if coin22 == 'Bitcoin':
-                image = Image.open("assets/BTC.png")
-                image = image.resize((25, 25), Image.ANTIALIAS)
-                image = image.convert('RGBA')
-                photo = ImageTk.PhotoImage(image)
-                
-                self.cryptoLbl2.config(image=photo)
-                self.cryptoLbl2.image = photo
-                
-            if coin22 == 'Ethereum':
-                image = Image.open("assets/ETH.png")
-                image = image.resize((25, 25), Image.ANTIALIAS)
-                image = image.convert('RGBA')
-                photo = ImageTk.PhotoImage(image)
-
-                self.cryptoLbl2.config(image=photo)
-                self.cryptoLbl2.image = photo
-
-            if coin22 == 'XRP':
-                image = Image.open("assets/XRP.png")
-                image = image.resize((25, 25), Image.ANTIALIAS)
-                image = image.convert('RGBA')
-                photo = ImageTk.PhotoImage(image)
-
-                self.cryptoLbl2.config(image=photo)
-                self.cryptoLbl2.image = photo
-                
-              
-            if coin33 == 'Bitcoin':
-                image = Image.open("assets/BTC.png")
-                image = image.resize((25, 25), Image.ANTIALIAS)
-                image = image.convert('RGBA')
-                photo = ImageTk.PhotoImage(image)
-                
-                self.cryptoLbl3.config(image=photo)
-                self.cryptoLbl3.image = photo
-                
-            if coin33 == 'Ethereum':
-                image = Image.open("assets/ETH.png")
-                image = image.resize((25, 25), Image.ANTIALIAS)
-                image = image.convert('RGBA')
-                photo = ImageTk.PhotoImage(image)
-                
-                self.cryptoLbl3.config(image=photo)
-                self.cryptoLbl3.image = photo
-                
-            if coin33 == 'XRP':
-                image = Image.open("assets/XRP.png")
-                image = image.resize((25, 25), Image.ANTIALIAS)
-                image = image.convert('RGBA')
-                photo = ImageTk.PhotoImage(image)
-                
-                self.cryptoLbl3.config(image=photo)
-                self.cryptoLbl3.image = photo
-                            
+            
+            '''image = Image.open("assets/rocket.png")
+            image = image.resize((50, 50), Image.ANTIALIAS)
+            image = image.convert('RGB')
+            photo = ImageTk.PhotoImage(image)
+            
+            self.rocketLbl.config(image=photo)
+            self.rocketLbl.image = photo'''
+            
         except Exception as e:
                 traceback.print_exc()
                 print ("Error: %s. Cannot get crypto." , e)
@@ -232,13 +149,13 @@ class CryptoPrice(Frame):
         self.coin3Price = ''
         
         self.coin1PriceLbl = Label(self.coin1Price, font=('Abel', extra_small_text_size), fg="white", bg="black", justify=RIGHT)
-        self.coin1PriceLbl.place(x=880, y=300, width=120, anchor=NE)
+        self.coin1PriceLbl.place(x=920, y=300, width=250, anchor=NE)
         
         self.coin2PriceLbl = Label(self.coin2Price, font=('Abel', extra_small_text_size), fg="white", bg="black")
-        self.coin2PriceLbl.place(x=880, y=330, width=120, anchor=NE)
+        self.coin2PriceLbl.place(x=920, y=325, width=250, anchor=NE)
         
         self.coin3PriceLbl = Label(self.coin3Price, font=('Abel', extra_small_text_size), fg="white", bg="black")
-        self.coin3PriceLbl.place(x=880, y=360, width=120, anchor=NE)
+        self.coin3PriceLbl.place(x=920, y=350, width=250, anchor=NE)
         #self.get_events()
         
         url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
